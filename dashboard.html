@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>FIWOS - Ofertas</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
+
+.side-menu {
+    height: 100%;
+    width: 0; /* Empieza cerrado */
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.4s; /* Velocidad de la animación */
+    padding-top: 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+}
+
+.menu-header {
+    text-align: center;
+    padding: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 36px;
+    cursor: pointer;
+    color: #333;
+}
+
+.menu-logo img {
+    width: 100px;
+}
+
+.menu-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.menu-links li {
+    padding: 15px 30px;
+}
+
+.menu-links li.active {
+    background-color: #e1f1ff; /* Azul clarito de tu imagen */
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    display: block;
+}
+
+.menu-socials {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.menu-socials img {
+    width: 30px;
+    height: 30px;
+}
+
+/* El fondo oscuro */
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.navbar {
+    background-color: #0b2a4a; /* El azul grisáceo de tu imagen */
+    color: #bdc3c7; /* Texto gris claro */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 30px;
+    height: 60px;
+    box-sizing: border-box;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1); /* Círculo sutil */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.brand-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #9eb1c1; /* Tono exacto del logo en la imagen */
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.user-section a {
+    color: #9eb1c1;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.account-icon {
+    font-size: 32px !important;
+    color: white;
+}
+
+/* Ajuste para que el contenido no quede pegado al menú si usas posición fija */
+body {
+    padding-top: 0; 
+}
+
+        /* CONTENEDOR PARA SIDEBAR + CONTENIDO */
+        .main-wrapper {
+            display: flex; /* Esto mantiene el sidebar al lado del contenido */
+            min-height: 100vh;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 220px;
+            background: #eaeaea;
+            padding: 20px;
+            flex-shrink: 0; /* Evita que el sidebar se encoja */
+        }
+
+        /* CONTENIDO */
+        .content {
+            flex: 1;
+            padding: 30px;
+            background: #c9dbe6;
+        }
+
+        /* ESTILOS DE OFERTAS */
+        .job {
+            display: flex;
+            background: #D2E7FF;
+            margin-bottom: 20px;
+            padding: 15px;
+            gap: 20px;
+            color: #071344;
+        }
+
+        .job img {
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .btn {
+            background: #0b2a4a;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* FOOTER CORREGIDO */
+        .footer-container {
+            background-color: #000a1f;
+            color: white;
+            padding: 40px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            width: 100%;
+            box-sizing: border-box;
+            clear: both;
+        }
+
+        .footer-brand {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-brand h1 {
+            font-size: 2.5rem;
+            margin: 0 0 20px 0;
+            letter-spacing: 2px;
+        }
+
+        .logo-circle {
+            width: 120px;
+            height: 120px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            text-transform: capitalize;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-column a, .footer-column p {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .link-underlined {
+            text-decoration: underline !important;
+        }
+
+        @media (max-width: 768px) {
+            .main-wrapper {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+            }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-brand, .footer-column {
+                align-items: center;
+                width: 100%;
+            }
+        }
+    </style>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById("side-menu");
+    const overlay = document.getElementById("overlay");
+    
+    if (menu.style.width === "300px") {
+        menu.style.width = "0";
+        overlay.style.display = "none";
+    } else {
+        menu.style.width = "300px";
+        overlay.style.display = "block";
+    }
+}
+</script>
+
+</head>
+<body>
+
+    <div id="side-menu" class="side-menu">
+    <div class="menu-header">
+        <span class="close-btn" onclick="toggleMenu()">&times;</span>
+        <div class="menu-logo">
+            <img src="assets/logo.png" alt="FIWOS Logo">
+        </div>
+    </div>
+
+    <ul class="menu-links">
+        <li class="active"><a href="#">Empleos disponibles</a></li>
+        <li><a href="#">Perfil</a></li>
+        <li><a href="#">Servicios para empresas</a></li>
+        <li><a href="#">Contáctanos</a></li>
+        <li><a href="#">Cazatalentos</a></li>
+    </ul>
+
+    <div class="menu-socials">
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="ig"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="fb"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/3256/3256013.png" alt="x"></a>
+        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="in"></a>
+    </div>
+</div>
+
+<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span class="material-symbols-outlined">menu</span>
+        </div>
+        <span class="brand-name">FIWOS</span>
+    </div>
+    </nav>
+
+    <div class="content">
+            <h1>Ofertas recientes</h1>
+
+            <div class="job">
+                <img src="assets/Auxiliar de tienda.avif" alt="Auxiliar de tienda">
+                <div>
+                    <h2>Auxiliar de tienda</h2>
+                    <p>Requisitos: Permiso para trabajo (menores de edad), estar estudiando (educación superior).</p>
+                    <h4>Descripción del servicio</h4>
+                    <p>Apoyo en organización del almacén, atención básica al cliente, surtidor de productos y apoyo en caja bajo supervisión.</p>
+                    <button class="btn">Reservar ahora</button>
+                </div>
+            </div>
+
+            <div class="job">
+                <img src="assets/auxiliar de enfermería.avif">
+                <div>
+                    <h2>Auxiliar de enfermería</h2>
+                    <p>Requisitos: Técnico en auxiliar de enfermería con registro vigente.</p>
+                    <h4>Descripción del servicio</h4>
+                    <p>Apoyo en atención a pacientes, toma de signos vitales y asistencia al personal médico.</p>
+                    <p>Experiencia obligatoría de 1 año en adelante.</p>
+                    <button class="btn">Reservar ahora</button>
+                </div>
+            </div>
+
+            <div class="job">
+                <img src="assets/asesor call center.avif">
+                <div>
+                    <h2>Asesor Call Center</h2>
+                    <p>Requisitos: Buena dicción, manejo básico de computador y nivel de inglés B2 en adelante.</p>
+                    <h4>Descripción del servicio</h4>
+                    <p>Se busca personal que brinde atención telefónica a clientes, ventas o soporte técnico. No es</p>
+                    <p>obligatoria experiencia previa.</p>
+                    <button class="btn">Reservar ahora</button>
+                </div>
+            </div>
+
+
+
+            <div class="job">
+                <img src="assets/asistente administrativo.avif">
+                <div>
+                    <h2>Asistente administrativo</h2>
+                    <p>Requisitos: bachiller o técnico, manejo básico de herramientas ofimáticas, buena comunicación.</p>
+                    <h4>Descripción del servicio</h4>
+                    <p>Se requiere asistente administrativo para apoyar en organización de documentos, atención</p>
+                    <p>telefónica, manejo basico de Excel y apoyo en tareas de oficina.</p>
+                    <button class="btn">Reservar ahora</button>
+            </div>
+
+
+            </div>
+
+            </div>
+    </div> <footer class="footer-container">
+        <div class="footer-brand">
+            <h1>FIWOS</h1>
+            <div class="logo-circle">
+                <img src="assets/logo.png" alt="FIWOS Logo" style="width:80%;">
+            </div>
+        </div>
+
+        <div class="footer-column">
+            <h3>Menú</h3>
+            <ul>
+                <li><a href="#" class="link-underlined">Inicio</a></li>
+                <li><a href="#" class="link-underlined">Trabajos</a></li>
+                <li><a href="#" class="link-underlined">Acerca de</a></li>
+                <li><a href="#" class="link-underlined">Contacto</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Contacto</h3>
+            <p><strong>fiwoscali@gmail.com</strong></p>
+            <p><strong>+57 316 664 7789</strong></p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Ubicación</h3>
+            <p>Cali -</p>
+            <p>Colombia</p>
+        </div>
+
+        <div class="footer-column">
+            <h3>Sociales</h3>
+            <ul>
+                <li><a href="#" class="link-underlined">Linkedin</a></li>
+                <li><a href="#" class="link-underlined">Facebook</a></li>
+                <li><a href="#" class="link-underlined">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

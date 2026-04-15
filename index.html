@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FIWOS</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #a9c7d8;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #7fb3c9, #cfe3ec);
+}
+
+.hero h1 {
+    background: #a9c7d8(255,255,255,0.6);
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 28px;
+    color: #071344;
+}
+
+.logo {
+    margin: 30px auto;
+    width: 300px;
+    height: 300px;
+}
+
+.frase {
+    font-style: italic;
+}
+
+/* SECCIONES */
+.section-title {
+    background: #bcd6e3;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+}
+
+/* TARJETAS */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #d9e9f2;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.number {
+    background: #6fb1cc;
+    color: white;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* INFO */
+.info {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.info div {
+    max-width: 300px;
+}
+
+/* BOTÓN */
+.btn {
+    display: block;
+    margin: 30px auto;
+    background: #071344;
+    color: white;
+    padding: 20px 700px;
+    border: none;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .cards, .info {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+    <h1>BIENVENIDO A FIWOS</h1>
+    <div class="hero-content">
+        <img src="assets/logo.png" alt="Logo FIWOS" class="logo-img">
+        <div class="text-content">
+        <p>"CONECTANDO TALENTO</p>
+        <p>CON OPORTUNIDADES"</p>
+        </div>
+    </div>
+</section>
+
+<div class="section-title">ACERCA DE NOSOTROS</div>
+
+<section class="cards">
+
+<div class="card">
+    <div class="number">1</div>
+    <h3>¿QUIÉNES SOMOS?</h3>
+    <p>FIWOS es una plataforma digital</p> 
+    <p>que ayuda a jóvenes de Cali a</p>
+    <p>encontrar empleo de forma</p>
+    <p>rápida y sencilla, conectandolo</p>
+    <p>con empresas reales a través de</p>
+    <p>redes sociales y herramientas</p>
+    <p>digitales.</p>
+</div>
+
+<div class="card">
+    <div class="number">2</div>
+    <h3>MISIÓN</h3>
+    <p>Nuestra misión es facilitar el</p>
+    <p>acceso al empleo para los</p>
+    <p>jovenes, ofreciendo un espacio</p>
+    <p>seguro y accesible donde</p>
+    <p>puedan encontrar vacantes</p>
+    <p>reales, mejorar su perfil</p>
+    <p>profesional y dar sus primeros</p>
+    <p>pasos en el mundo laboral.</p>
+</div>
+
+<div class="card">
+    <div class="number">3</div>
+    <h3>VISIÓN</h3>
+    <p>Convertirnos en una plataforma líder en empleo juvenil en Colombia.</p>
+    <p>Nuestra visión es convertirnos en</p>
+    <p>una plataforma líder en empleo</p>
+    <p>juvenil en Cali reconocida por su</p>
+    <p>impacto social, innovación y</p>
+    <p>compromiso con el futuro</p>
+    <p>profesional de la juventud.</p>      
+</div>
+
+</section>
+
+<section class="info">
+
+<div>
+    <h4>¿QUÉ BUSCAMOS?</h4>
+    <p>Buscamos reducir el desempleo en</p>
+    <p>Cali, brindando oportunidades</p>
+    <p>laborales reales y acompañando a los</p>
+    <p>jóvenes y adultos en su proceso de</p>
+    <p>crecimiento personal y profesional.</p>
+</div>
+
+<div>
+    <h4>VALORES</h4>
+    <p>Confianza.</p>
+    <p>Transparencia.</p>
+    <p>Inclusión.</p>
+    <p>Responsabilidad social.</p>
+    <p>Innovación.</p>
+</div>
+
+<div>
+    <h4>¿POR QUÉ ELEGIR FIWOS?</h4>
+    <p>Vacantes reales y confiables.</p>
+    <p>Plataforma pensada para todos.</p>
+    <p>Uso sencillo y rápido.</p>
+    <p>Apoyo para mejorar tu hoja de vida.</p>
+    <p>Conexión directa con empresas.</p>
+</div>
+
+</section>
+
+<button class="btn" onclick="window.location.href='dashboard.html'">
+    INGRESA AHORA
+</button>
+
+</body>
+</html>
