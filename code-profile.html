@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>FIWOS - Mi Perfil</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#163bd0",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111421",
+                        "fiwos-bg": "#D2E7FF",
+                        "fiwos-surface": "#FFFFFF",
+                        "fiwos-text": "#000000",
+                        "fiwos-muted": "#2B60AF",
+                        "fiwos-accent": "#2ECC71",
+                        "fiwos-error": "#ef4444",
+                        "fiwos-dark": "#071344",
+                        "fiwos-light": "#D2E7FF"
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .hover-lift {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(22, 59, 208, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-fiwos-bg text-fiwos-text min-h-screen flex flex-col antialiased">
+    
+    <nav class="bg-fiwos-dark text-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center gap-8">
+                    <a class="flex-shrink-0 flex items-center gap-2" href="index.html">
+                        <span class="font-display font-extrabold text-xl tracking-tight text-white">FIWOS</span>
+                    </a>
+                    <div class="hidden md:flex space-x-8">
+                        <a class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors" href="code-job.html">Busco Empleo</a>
+                        <a class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors" href="code-company.html">Para Empresas</a>
+                        <a class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors" href="code-academy.html">Academia</a>
+                        <a class="text-white border-b-2 border-fiwos-light px-3 py-2 text-sm font-bold" href="code-profile.html">Mi Perfil</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a class="hidden md:inline-flex text-white hover:text-gray-200 text-sm font-medium" href="#">Ingresar</a>
+                    <a class="bg-fiwos-light hover:bg-white text-fiwos-dark px-4 py-2 rounded-lg text-sm font-bold transition-colors shadow-sm hover-lift" href="#">
+                        Publicar Vacante
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex justify-center py-10 px-4">
+        <div class="w-full max-w-2xl bg-fiwos-surface rounded-xl shadow-[0_4px_12px_rgba(7,19,68,0.08)] p-8">
+            <div class="mb-8">
+                <h2 class="text-3xl font-bold text-primary mb-2">Tu CV FIWOS</h2>
+                <p class="text-gray-600">Completa tu perfil destacando tus habilidades y disponibilidad para encontrar tu empleo ideal rápidamente.</p>
+            </div>
+            
+            <form class="space-y-10">
+                <section>
+                    <div class="border-b border-gray-200 pb-2 mb-6">
+                        <h3 class="text-2xl font-bold text-primary">Información Personal</h3>
+                    </div>
+                    <div class="flex flex-col items-center mb-8 text-center">
+                        <div class="w-[120px] h-[120px] rounded-full bg-fiwos-bg flex items-center justify-center border-2 border-dashed border-fiwos-muted text-fiwos-muted hover:bg-[#c4deff] cursor-pointer transition-colors relative overflow-hidden group">
+                            <span class="material-symbols-outlined text-4xl group-hover:hidden">add_a_photo</span>
+                            <span class="text-sm font-medium hidden group-hover:block text-center px-2">Subir Foto</span>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 italic">Formatos: JPG, PNG. Max 2MB.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nombre Completo <span class="text-fiwos-error">*</span></label>
+                            <input class="w-full rounded-xl border-gray-200 border px-4 py-2 bg-white focus:border-primary focus:ring-1 focus:ring-primary" type="text" value="Juan Pérez"/>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Cédula de Ciudadanía <span class="text-fiwos-error">*</span></label>
+                            <input class="w-full rounded-xl border-fiwos-error border-2 px-4 py-2 bg-white focus:ring-1 focus:ring-fiwos-error" type="text" placeholder="Número de documento"/>
+                            <p class="text-fiwos-error text-[10px] mt-1 flex items-center gap-1 font-medium italic">
+                                <span class="material-symbols-outlined text-xs">info</span> Este campo es obligatorio
+                            </p>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Teléfono Móvil <span class="text-fiwos-error">*</span></label>
+                            <input class="w-full rounded-xl border-gray-200 border px-4 py-2 bg-white focus:border-primary focus:ring-1 focus:ring-primary" type="tel" value="300 123 4567"/>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico <span class="text-fiwos-error">*</span></label>
+                            <input class="w-full rounded-xl border-gray-200 border px-4 py-2 bg-white focus:border-primary focus:ring-1 focus:ring-primary" type="email" value="juan.perez@email.com"/>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Barrio / Comuna</label>
+                            <input class="w-full rounded-xl border-gray-200 border px-4 py-2 bg-white focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Ej. San Fernando, Comuna 19" type="text"/>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="border-b border-gray-200 pb-2 mb-6">
+                        <h3 class="text-2xl font-bold text-primary flex items-center gap-2">
+                            <span class="material-symbols-outlined">calendar_month</span> Disponibilidad
+                        </h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-6">Selecciona los bloques de tiempo en los que puedes trabajar.</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th class="p-2 text-sm font-medium text-gray-500">Lun</th>
+                                    <th class="p-2 text-sm font-medium text-gray-500">Mar</th>
+                                    <th class="p-2 text-sm font-medium text-gray-500">Mié</th>
+                                    <th class="p-2 text-sm font-medium text-gray-500">Jue</th>
+                                    <th class="p-2 text-sm font-medium text-gray-500">Vie</th>
+                                    <th class="p-4 text-sm font-medium text-primary bg-[#D2E7FF]/50 rounded-t-xl">Sáb</th>
+                                    <th class="p-4 text-sm font-medium text-primary bg-[#D2E7FF]/50 rounded-t-xl">Dom</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-gray-50">
+                                    <td class="py-4 pr-4">
+                                        <span class="block text-sm font-bold">Mañana</span>
+                                        <span class="block text-[10px] text-gray-400">6am - 12pm</span>
+                                    </td>
+                                    <td class="text-center"><input type="checkbox" class="w-6 h-6 rounded-full border-gray-300 text-primary focus:ring-primary cursor-pointer"></td>
+                                    <td class="text-center"><input type="checkbox" class="w-6 h-6 rounded-full border-gray-300 text-primary focus:ring-primary cursor-pointer"></td>
+                                    <td class="text-center"><input type="checkbox" class="w-6 h-6 rounded-full border-gray-300 text-primary focus:ring-primary cursor-pointer"></td>
+                                    <td class="text-center"><input type="checkbox" class="w-6 h-6 rounded-full border-gray-300 text-primary focus:ring-primary cursor-pointer"></td>
+                                    <td class="text-center"><input type="checkbox" class="w-6 h-6 rounded-full border-gray-300 text-primary focus:ring-primary cursor-pointer"></td>
+                                    <td class="text-center bg-[#D2E7FF]/30"><input type="checkbox" checked class="w-6 h-6 rounded-full border-none text-primary focus:ring-primary shadow-sm cursor-pointer"></td>
+                                    <td class="text-center bg-[#D2E7FF]/30"><input type="checkbox" checked class="w-6 h-6 rounded-full border-none text-primary focus:ring-primary shadow-sm cursor-pointer"></td>
+                                </tr>
+                                <tr class="border-b border-gray-50">
+                                    <td class="py-4 pr-4">
+                                        <span class="block text-sm font-bold">Tarde</span>
+                                        <span class="block text-[10px] text-gray-400">12pm - 6pm</span>
+                                    </td>
+                                    <td class="text-center"><input type="checkbox" class="w-6 h-6 rounded-full border-gray-300 text-primary focus:ring-primary cursor-pointer"></td>
+                                    <td class="text-center"><input type="checkbox" class="w-6 h-6 rounded-full border-gray-300 text-primary focus:ring-primary cursor-pointer"></td>
+                                    <td class="text-center"><input type="checkbox" class="w-6 h-6 rounded-full border-gray-300 text-primary focus:ring-primary cursor-pointer"></td>
+                                    <td class="text-center"><input type="checkbox" class="w-6 h-6 rounded-full border-gray-300 text-primary focus:ring-primary cursor-pointer"></td>
+                                    <td class="text-center"><input type="checkbox" class="w-6 h-6 rounded-full border-gray-300 text-primary focus:ring-primary cursor-pointer"></td>
+                                    <td class="text-center bg-[#D2E7FF]/30"><input type="checkbox" checked class="w-6 h-6 rounded-full border-none text-primary focus:ring-primary shadow-sm cursor-pointer"></td>
+                                    <td class="text-center bg-[#D2E7FF]/30"><input type="checkbox" checked class="w-6 h-6 rounded-full border-none text-primary focus:ring-primary shadow-sm cursor-pointer"></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 pr-4">
+                                        <span class="block text-sm font-bold">Noche</span>
+                                        <span class="block text-[10px] text-gray-400">6pm - 12am</span>
+                                    </td>
+                                    <td class="text-center"><input type="checkbox" checked class="w-6 h-6 rounded-full border-none text-primary focus:ring-primary shadow-sm cursor-pointer"></td>
+                                    <td class="text-center"><input type="checkbox" checked class="w-6 h-6 rounded-full border-none text-primary focus:ring-primary shadow-sm cursor-pointer"></td>
+                                    <td class="text-center"><input type="checkbox" checked class="w-6 h-6 rounded-full border-none text-primary focus:ring-primary shadow-sm cursor-pointer"></td>
+                                    <td class="text-center"><input type="checkbox" checked class="w-6 h-6 rounded-full border-none text-primary focus:ring-primary shadow-sm cursor-pointer"></td>
+                                    <td class="text-center"><input type="checkbox" checked class="w-6 h-6 rounded-full border-none text-primary focus:ring-primary shadow-sm cursor-pointer"></td>
+                                    <td class="text-center bg-[#D2E7FF]/30 rounded-b-xl"><input type="checkbox" class="w-6 h-6 rounded-full border-gray-300 text-primary focus:ring-primary cursor-pointer"></td>
+                                    <td class="text-center bg-[#D2E7FF]/30 rounded-b-xl"><input type="checkbox" class="w-6 h-6 rounded-full border-gray-300 text-primary focus:ring-primary cursor-pointer"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <div class="border-b border-gray-200 pb-2 mb-6">
+                        <h3 class="text-2xl font-bold text-primary flex items-center gap-2">
+                            <span class="material-symbols-outlined">star</span> Mis Habilidades
+                        </h3>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-3 font-bold">Agrega habilidades (Presiona Enter) <span class="text-fiwos-error">*</span></label>
+                        <div class="flex flex-wrap gap-2 p-2 bg-white border border-gray-300 rounded-xl min-h-[64px] items-center focus-within:ring-2 focus-within:ring-primary/10 transition-all">
+                            <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#2B60AF] text-white text-xs font-bold rounded-full">
+                                Puntual <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#2B60AF] text-white text-xs font-bold rounded-full">
+                                Trabajo en equipo <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+                            </span>
+                            <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#2B60AF] text-white text-xs font-bold rounded-full">
+                                Actitud positiva <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
+                            </span>
+                            <input class="flex-1 outline-none border-none p-2 text-sm text-gray-400 focus:ring-0 min-w-[150px]" placeholder="Ej. Bilingüe, Organizado..." type="text"/>
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-gray-500 italic">Estas habilidades destacarán tu perfil ante los empleadores. No necesitas experiencia formal previa.</p>
+                </section>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-fiwos-dark text-white pt-16 pb-8 mt-auto border-t border-fiwos-dark/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="flex flex-col gap-4">
+                    <span class="font-display font-extrabold text-xl tracking-tight text-white">FIWOS</span>
+                    <p class="text-gray-400 text-sm leading-relaxed mt-2">Conectando talento con oportunidades de manera ágil y segura.</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-fiwos-light font-bold text-sm uppercase tracking-wider">Explorar</h4>
+                    <div class="flex flex-col gap-3 text-sm text-gray-300">
+                        <a class="hover:text-white transition-colors" href="code-job.html">Busco Empleo</a>
+                        <a class="hover:text-white transition-colors" href="code-company.html">Para Empresas</a>
+                        <a class="hover:text-white transition-colors" href="code-academy.html">Academia</a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-fiwos-light font-bold text-sm uppercase tracking-wider">Soporte</h4>
+                    <div class="flex flex-col gap-3 text-sm text-gray-300">
+                        <a class="hover:text-white transition-colors" href="#">Centro de Ayuda</a>
+                        <a class="hover:text-white transition-colors" href="#">Preguntas Frecuentes</a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-fiwos-light font-bold text-sm uppercase tracking-wider">Contacto</h4>
+                    <div class="flex flex-col gap-3 text-sm text-gray-300">
+                        <a class="hover:text-white transition-colors flex items-center gap-2" href="mailto:hola@fiwos.com">
+                            <span class="material-symbols-outlined text-base">mail</span> hola@fiwos.com
+                        </a>
+                        <a class="hover:text-white transition-colors flex items-center gap-2" href="tel:+573000000000">
+                            <span class="material-symbols-outlined text-base">call</span> +57 300 000 0000
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-800 text-sm text-gray-400">
+                <p>© 2024 FIWOS. Todos los derechos reservados.</p>
+                <div class="flex gap-6">
+                    <a class="hover:text-white transition-colors" href="#">Términos de Servicio</a>
+                    <a class="hover:text-white transition-colors" href="#">Política de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-6 right-6 z-20">
+        <button class="bg-primary hover:bg-[#0f2a96] text-white font-bold py-3 px-6 rounded-lg shadow-lg flex items-center gap-2 transition-all hover:-translate-y-1">
+            <span class="material-symbols-outlined">save</span> Guardar Perfil
+        </button>
+    </div>
+</body>
+</html>

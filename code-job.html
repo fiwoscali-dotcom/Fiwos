@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>FIWOS - Job Board</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#163bd0",
+              "fiwos-dark": "#071344",
+              "fiwos-light": "#D2E7FF",
+              "fiwos-bg": "#f8fafc"
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans", "sans-serif"]
+            },
+            borderRadius: {
+              "xl": "1rem",
+              "2xl": "1.5rem",
+              "3xl": "2rem"
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body { font-family: 'Plus Jakarta Sans', sans-serif; }
+      .hover-lift { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+      .hover-lift:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(22, 59, 208, 0.1); }
+    </style>
+</head>
+<body class="bg-fiwos-bg text-slate-900 min-h-screen flex flex-col antialiased">
+    
+    <nav class="bg-fiwos-dark text-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center gap-8">
+                    <a class="flex-shrink-0 flex items-center gap-2" href="index.html">
+                        <span class="font-display font-extrabold text-xl tracking-tight text-white">FIWOS</span>
+                    </a>
+                    <div class="hidden md:flex space-x-8">
+                        <a class="text-white border-b-2 border-fiwos-light px-3 py-2 text-sm font-bold" href="code-job.html">Busco Empleo</a>
+                        <a class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors" href="code-company.html">Para Empresas</a>
+                        <a class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors" href="code-academy.html">Academia</a>
+                        <a class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors" href="code-profile.html">Mi Perfil</a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a class="hidden md:inline-flex text-white hover:text-gray-200 text-sm font-medium" href="#">Ingresar</a>
+                    <a class="bg-fiwos-light hover:bg-white text-fiwos-dark px-4 py-2 rounded-lg text-sm font-bold transition-colors shadow-sm" href="#">
+                        Publicar Vacante
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-white pt-12 pb-8 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="relative max-w-2xl mx-auto mb-6">
+                <div class="flex items-center gap-3 px-6 py-3 bg-white border border-slate-200 rounded-full shadow-sm">
+                    <span class="material-symbols-outlined text-slate-400">search</span>
+                    <input class="w-full bg-transparent border-none focus:ring-0 text-sm placeholder:text-slate-400" 
+                           placeholder="Ej. Paseador de perros en San Fernando" type="text"/>
+                </div>
+            </div>
+            
+            <div class="flex justify-center gap-2 mb-8">
+                <button class="px-5 py-1.5 bg-primary text-white rounded-full text-xs font-bold">Fines de semana</button>
+                <button class="px-5 py-1.5 bg-white border border-slate-200 text-slate-600 rounded-full text-xs font-bold hover:bg-slate-50">Noches</button>
+                <button class="px-5 py-1.5 bg-white border border-slate-200 text-slate-600 rounded-full text-xs font-bold hover:bg-slate-50">Medio tiempo</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 py-6 w-full flex-grow">
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <aside class="w-full lg:w-64 shrink-0">
+                <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+                    <div class="flex items-center gap-2 mb-6">
+                        <span class="material-symbols-outlined text-primary text-xl">tune</span>
+                        <h3 class="text-sm font-extrabold text-fiwos-dark">Filtros Adicionales</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-xs font-bold text-slate-900 mb-3">Ubicación (Cali)</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 text-xs text-slate-600 cursor-pointer">
+                                    <input type="checkbox" checked class="rounded-full text-primary focus:ring-0 w-4 h-4 border-slate-300"> San Fernando
+                                </label>
+                                <label class="flex items-center gap-2 text-xs text-slate-600 cursor-pointer">
+                                    <input type="checkbox" class="rounded-full text-primary focus:ring-0 w-4 h-4 border-slate-300"> El Ingenio
+                                </label>
+                                <label class="flex items-center gap-2 text-xs text-slate-600 cursor-pointer">
+                                    <input type="checkbox" class="rounded-full text-primary focus:ring-0 w-4 h-4 border-slate-300"> Ciudad Jardín
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xs font-bold text-slate-900 mb-3">Categoría</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center gap-2 text-xs text-slate-600 cursor-pointer">
+                                    <input type="checkbox" checked class="rounded-full text-primary focus:ring-0 w-4 h-4 border-slate-300"> Mascotas
+                                </label>
+                                <label class="flex items-center gap-2 text-xs text-slate-600 cursor-pointer">
+                                    <input type="checkbox" checked class="rounded-full text-primary focus:ring-0 w-4 h-4 border-slate-300"> Eventos / Gastronomía
+                                </label>
+                                <label class="flex items-center gap-2 text-xs text-slate-600 cursor-pointer">
+                                    <input type="checkbox" class="rounded-full text-primary focus:ring-0 w-4 h-4 border-slate-300"> Administrativo
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <section class="flex-1 space-y-4">
+                <div class="flex justify-between items-center mb-4 px-2">
+                    <span class="text-xs font-medium text-slate-500">Mostrando 24 vacantes disponibles</span>
+                    <button class="text-xs font-bold text-primary flex items-center gap-1">Ordenar por <span class="material-symbols-outlined text-sm">expand_more</span></button>
+                </div>
+
+                <div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm flex items-center justify-between hover-lift">
+                    <div class="flex gap-4 items-center">
+                        <div class="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">pets</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900">Paseador de perros</h3>
+                            <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1">
+                                <span class="text-[11px] text-slate-500 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs">location_on</span> San Fernando, Cali
+                                </span>
+                                <span class="text-[11px] font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs">payments</span> $20.000 / hora
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-[10px] text-slate-400 mb-2">Hace 2 horas</p>
+                        <button class="bg-[#22c55e] hover:bg-emerald-600 text-white px-6 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-colors">
+                            Aplicar <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm flex items-center justify-between hover-lift">
+                    <div class="flex gap-4 items-center">
+                        <div class="w-12 h-12 bg-orange-50 rounded-2xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-orange-500">restaurant</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900">Mesero para evento fin de semana</h3>
+                            <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1">
+                                <span class="text-[11px] text-slate-500 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs">location_on</span> El Ingenio, Cali
+                                </span>
+                                <span class="text-[11px] font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs">payments</span> $60.000 / turno
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-[10px] text-slate-400 mb-2">Hace 5 horas</p>
+                        <button class="bg-[#22c55e] hover:bg-emerald-600 text-white px-6 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-colors">
+                            Aplicar <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm flex items-center justify-between hover-lift">
+                    <div class="flex gap-4 items-center">
+                        <div class="w-12 h-12 bg-purple-50 rounded-2xl flex items-center justify-center">
+                            <span class="material-symbols-outlined text-purple-600">coffee</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900">Barista Junior (Medio Tiempo)</h3>
+                            <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1">
+                                <span class="text-[11px] text-slate-500 flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs">location_on</span> Granada, Cali
+                                </span>
+                                <span class="text-[11px] font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-xs">payments</span> $650.000 / mes
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-[10px] text-slate-400 mb-2">Hace 1 día</p>
+                        <button class="bg-[#22c55e] hover:bg-emerald-600 text-white px-6 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-colors">
+                            Aplicar <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-fiwos-dark text-white pt-16 pb-8 border-t border-fiwos-dark/20 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="flex flex-col gap-4">
+                    <span class="font-display font-extrabold text-xl tracking-tight text-white">FIWOS</span>
+                    <p class="text-gray-400 text-sm leading-relaxed mt-2">
+                        Conectando talento con oportunidades de manera ágil y segura.
+                    </p>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-fiwos-light font-bold text-sm uppercase tracking-wider">Explorar</h4>
+                    <div class="flex flex-col gap-3 text-sm text-gray-300">
+                        <a class="hover:text-white transition-colors" href="code-job.html">Busco Empleo</a>
+                        <a class="hover:text-white transition-colors" href="code-company.html">Para Empresas</a>
+                        <a class="hover:text-white transition-colors" href="code-academy.html">Academia</a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-fiwos-light font-bold text-sm uppercase tracking-wider">Soporte</h4>
+                    <div class="flex flex-col gap-3 text-sm text-gray-300">
+                        <a class="hover:text-white transition-colors" href="#">Centro de Ayuda</a>
+                        <a class="hover:text-white transition-colors" href="#">Preguntas Frecuentes</a>
+                        <a class="hover:text-white transition-colors" href="#">Guías de Usuario</a>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <h4 class="text-fiwos-light font-bold text-sm uppercase tracking-wider">Contacto</h4>
+                    <div class="flex flex-col gap-3 text-sm text-gray-300">
+                        <a class="hover:text-white transition-colors flex items-center gap-2" href="mailto:hola@fiwos.com">
+                            <span class="material-symbols-outlined text-base">mail</span> hola@fiwos.com
+                        </a>
+                        <a class="hover:text-white transition-colors flex items-center gap-2" href="tel:+573000000000">
+                            <span class="material-symbols-outlined text-base">call</span> +57 300 000 0000
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-800 text-sm text-gray-400">
+                <p>© 2024 FIWOS. Todos los derechos reservados.</p>
+                <div class="flex gap-6">
+                    <a class="hover:text-white transition-colors" href="#">Términos de Servicio</a>
+                    <a class="hover:text-white transition-colors" href="#">Política de Privacidad</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

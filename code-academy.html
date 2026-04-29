@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>FIWOS Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#163bd0",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111421",
+                        "text-main": "#0e101b",
+                        "text-muted": "#4e5d97",
+                        "border-color": "#e7eaf3",
+                        "fiwos-dark": "#071344",
+                        "fiwos-light": "#D2E7FF"
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f6f6f8;
+            color: #0e101b;
+        }
+        .hover-lift {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(22, 59, 208, 0.15);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col group/design-root overflow-x-hidden">
+
+<nav class="bg-fiwos-dark text-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center gap-8">
+                <a class="flex-shrink-0 flex items-center gap-2" href="index.html">
+                    <span class="font-display font-extrabold text-xl tracking-tight text-white">FIWOS</span>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors" href="code-job.html">Busco Empleo</a>
+                    <a class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors" href="code-company.html">Para Empresas</a>
+                    <a class="text-white border-b-2 border-fiwos-light px-3 py-2 text-sm font-medium" href="code-academy.html">Academia</a>
+                    <a class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors" href="code-profile.html">Mi Perfil</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <a class="hidden md:inline-flex text-white hover:text-gray-200 text-sm font-medium" href="#">Ingresar</a>
+                <a class="bg-fiwos-light hover:bg-white text-fiwos-dark px-4 py-2 rounded-lg text-sm font-bold transition-colors shadow-sm hover-lift" href="#">
+                    Publicar Vacante
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="flex-1 flex flex-col items-center w-full">
+    <div class="relative flex h-auto w-full flex-col bg-[#f8f9fc] overflow-x-hidden">
+        <div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+            <div class="layout-content-container flex flex-col max-w-[960px] flex-1 w-full">
+                <div class="flex flex-wrap justify-between gap-3 p-4">
+                    <div class="flex min-w-72 flex-col gap-3">
+                        <p class="text-[#0e101b] tracking-light text-[32px] font-bold leading-tight">FIWOS Academy - Mejora tus habilidades</p>
+                        <p class="text-[#4e5d97] text-sm font-normal leading-normal">Aprende nuevas habilidades y mejora tu perfil profesional con nuestros cursos gratuitos.</p>
+                    </div>
+                </div>
+                <div class="pb-3">
+                    <div class="flex border-b border-[#d0d4e7] px-4 gap-8">
+                        <a class="flex flex-col items-center justify-center border-b-[3px] border-b-[#163bd0] text-[#0e101b] pb-[13px] pt-4" href="#">
+                            <p class="text-[#0e101b] text-sm font-bold leading-normal tracking-[0.015em]">Todos los cursos</p>
+                        </a>
+                        <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#4e5d97] pb-[13px] pt-4" href="#">
+                            <p class="text-[#4e5d97] text-sm font-bold leading-normal tracking-[0.015em]">En progreso</p>
+                        </a>
+                        <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#4e5d97] pb-[13px] pt-4" href="#">
+                            <p class="text-[#4e5d97] text-sm font-bold leading-normal tracking-[0.015em]">Completados</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full max-w-[960px] mx-auto px-4 pb-12 mt-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <article class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group cursor-pointer transition-shadow hover:shadow-md">
+                <div class="relative h-48 overflow-hidden bg-gray-200">
+                    <img alt="Atención al Cliente" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBElWXrl9jXfPwWulYjJAPE04jmeW6eYQY7048s989w1hnsCkvwa2R-oIWxPmsExJJzBEDHeg8fjErDX0iSFkpfiu92yKgBr6vdXrC10m26S83em8jMy4GGp9-ekdTujFNb0QoIqJFQggdGoYHvThDormK4WoorzHiMCjd3Bmyd_8eGvXUnX7fa93FmfAkgAtCFFJ2UJ0QgUIByT7kD7N1ULLiU8mmeDZtniz4wHU6e6DTJQjO0F2VcywDIanTkOjrQIscjtNYrcBA"/>
+                </div>
+                <div class="p-5 flex flex-col flex-1 gap-4">
+                    <div class="flex items-start justify-between">
+                        <span class="bg-blue-50 text-primary px-2.5 py-1 rounded text-xs font-bold w-fit">Básico</span>
+                        <div class="flex items-center text-gray-500 text-sm gap-1">
+                            <span class="material-symbols-outlined text-[18px]">schedule</span>
+                            <span>2 horas</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 leading-snug">Atención al Cliente para Servicios</h3>
+                    <div class="mt-auto pt-2">
+                        <button class="w-full bg-primary text-white rounded-lg py-2.5 font-bold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                            Iniciar Curso <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </article>
+            <article class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group cursor-pointer transition-shadow hover:shadow-md">
+                <div class="relative h-48 overflow-hidden bg-gray-200">
+                    <img alt="Finanzas Personales" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjW94tKdAJoOw9wyCIrxWrV-vmaoGzwgwZWkUfhVM8Q_fh4qeozOK-AGvknJ-dtd7xOBHCo-WElmklBaYH-vAaoXglgRz683_NK-uzT-BrF0jNOXyLQ4X80ctK603LDBS-i8ceYHBS31Xsh5B04T5R6JyEcqgAv4k2LddRag1hj3VBPkvOkevgar-wfvLolv3o8qpoQ2ukb6rl8w9l9V8cBLPaT33MH3i4iPIzTMGeJQftbg4DdICe7N4zXdPZwEQNGdXvqc5fqYM"/>
+                </div>
+                <div class="p-5 flex flex-col flex-1 gap-4">
+                    <div class="flex items-start justify-between">
+                        <span class="bg-blue-50 text-primary px-2.5 py-1 rounded text-xs font-bold w-fit">Intermedio</span>
+                        <div class="flex items-center text-gray-500 text-sm gap-1">
+                            <span class="material-symbols-outlined text-[18px]">schedule</span>
+                            <span>1.5 horas</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 leading-snug">Administración Básica de Finanzas</h3>
+                    <div class="mt-auto pt-2 flex flex-col gap-3">
+                        <div class="w-full bg-blue-50 rounded-full h-2 overflow-hidden">
+                            <div class="bg-green-500 h-2 rounded-full w-[60%]"></div>
+                        </div>
+                        <button class="w-full border-2 border-primary text-primary bg-transparent rounded-lg py-2.5 font-bold hover:bg-blue-50 transition-colors flex items-center justify-center gap-2">
+                            Continuar <span class="material-symbols-outlined text-[20px]">play_arrow</span>
+                        </button>
+                    </div>
+                </div>
+            </article>
+            <article class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group cursor-pointer transition-shadow hover:shadow-md">
+                <div class="relative h-48 overflow-hidden bg-gray-200">
+                    <img alt="Comunicación Efectiva" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL4Nk2Sq-MsUBAuPCOio2KxVuoPDvp3KVm1Utd5cpnS_61gXhVeUvsEGMvUscqm1c1r5wz_KtLTZiNJSFRsqyedqAH1hEEUiwz8AbtBKnRFvMIdqd2XsnUazQiwepYLJKPMV3McMZO8hQ1uKijxnr2ulMQiuUa5qXrpMYJYhNOlpHoNEPZQrAwBcTeayDSSMUcWnVCPuhzx2j5wRozAECCsYayWQxo6IgLnLuXKhI_6xHCkwZbRIJL8s_tQ-C3PhVq3VYV6b2bFGo"/>
+                </div>
+                <div class="p-5 flex flex-col flex-1 gap-4">
+                    <div class="flex items-start justify-between">
+                        <span class="bg-blue-50 text-primary px-2.5 py-1 rounded text-xs font-bold w-fit">Básico</span>
+                        <div class="flex items-center text-gray-500 text-sm gap-1">
+                            <span class="material-symbols-outlined text-[18px]">schedule</span>
+                            <span>3 horas</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 leading-snug">Habilidades de Comunicación</h3>
+                    <div class="mt-auto pt-2">
+                        <button class="w-full bg-primary text-white rounded-lg py-2.5 font-bold hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+                            Iniciar Curso <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-fiwos-dark text-white pt-16 pb-8 mt-auto border-t border-fiwos-dark/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="flex flex-col gap-4">
+                <a class="flex items-center gap-2" href="index.html">
+                    <span class="font-display font-extrabold text-xl tracking-tight text-white">FIWOS</span>
+                </a>
+                <p class="text-gray-400 text-sm leading-relaxed mt-2">
+                    Conectando talento con oportunidades de manera ágil y segura.
+                </p>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h4 class="text-fiwos-light font-bold text-sm uppercase tracking-wider">Explorar</h4>
+                <div class="flex flex-col gap-3 text-sm text-gray-300">
+                    <a class="hover:text-white transition-colors" href="code-job.html">Busco Empleo</a>
+                    <a class="hover:text-white transition-colors" href="code-company.html">Para Empresas</a>
+                    <a class="hover:text-white transition-colors" href="code-academy.html">Academia</a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h4 class="text-fiwos-light font-bold text-sm uppercase tracking-wider">Soporte</h4>
+                <div class="flex flex-col gap-3 text-sm text-gray-300">
+                    <a class="hover:text-white transition-colors" href="#">Centro de Ayuda</a>
+                    <a class="hover:text-white transition-colors" href="#">Preguntas Frecuentes</a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h4 class="text-fiwos-light font-bold text-sm uppercase tracking-wider">Contacto</h4>
+                <div class="flex flex-col gap-3 text-sm text-gray-300">
+                    <a class="hover:text-white transition-colors flex items-center gap-2" href="mailto:hola@fiwos.com">
+                        <span class="material-symbols-outlined text-base">mail</span> hola@fiwos.com
+                    </a>
+                    <a class="hover:text-white transition-colors flex items-center gap-2" href="tel:+573000000000">
+                        <span class="material-symbols-outlined text-base">call</span> +57 300 000 0000
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8 border-t border-gray-800 text-sm text-gray-400">
+            <p>© 2024 FIWOS. Todos los derechos reservados.</p>
+            <div class="flex gap-6">
+                <a class="hover:text-white transition-colors" href="#">Términos de Servicio</a>
+                <a class="hover:text-white transition-colors" href="#">Política de Privacidad</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
