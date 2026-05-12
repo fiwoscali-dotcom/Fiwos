@@ -4,6 +4,7 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>FIWOS - Mi Perfil</title>
+    <link rel="icon" href="Fiwos.ico">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -62,7 +63,7 @@
                 </div>
                 <div class="flex items-center gap-4">
                     <a class="hidden md:inline-flex text-white hover:text-gray-200 text-sm font-medium" href="#">Ingresar</a>
-                    <a class="bg-fiwos-light hover:bg-white text-fiwos-dark px-4 py-2 rounded-lg text-sm font-bold transition-colors shadow-sm hover-lift" href="#">
+                    <a class="bg-fiwos-light hover:bg-white text-fiwos-dark px-4 py-2 rounded-lg text-sm font-bold transition-colors shadow-sm hover-lift" href="code-company.html">
                         Publicar Vacante
                     </a>
                 </div>
@@ -182,29 +183,30 @@
                     </div>
                 </section>
 
-                <section>
-                    <div class="border-b border-gray-200 pb-2 mb-6">
-                        <h3 class="text-2xl font-bold text-primary flex items-center gap-2">
-                            <span class="material-symbols-outlined">star</span> Mis Habilidades
-                        </h3>
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-sm font-medium text-gray-700 mb-3 font-bold">Agrega habilidades (Presiona Enter) <span class="text-fiwos-error">*</span></label>
-                        <div class="flex flex-wrap gap-2 p-2 bg-white border border-gray-300 rounded-xl min-h-[64px] items-center focus-within:ring-2 focus-within:ring-primary/10 transition-all">
-                            <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#2B60AF] text-white text-xs font-bold rounded-full">
-                                Puntual <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
-                            </span>
-                            <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#2B60AF] text-white text-xs font-bold rounded-full">
-                                Trabajo en equipo <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
-                            </span>
-                            <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#2B60AF] text-white text-xs font-bold rounded-full">
-                                Actitud positiva <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span>
-                            </span>
-                            <input class="flex-1 outline-none border-none p-2 text-sm text-gray-400 focus:ring-0 min-w-[150px]" placeholder="Ej. Bilingüe, Organizado..." type="text"/>
-                        </div>
-                    </div>
-                    <p class="text-[11px] text-gray-500 italic">Estas habilidades destacarán tu perfil ante los empleadores. No necesitas experiencia formal previa.</p>
-                </section>
+               <section>
+    <div class="border-b border-gray-200 pb-2 mb-6">
+        <h3 class="text-2xl font-bold text-primary flex items-center gap-2">
+            <span class="material-symbols-outlined">star</span> Mis Habilidades
+        </h3>
+    </div>
+    <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-3 font-bold">Agrega habilidades (Presiona Enter) <span class="text-fiwos-error">*</span></label>
+        
+        <div id="skills-container" class="flex flex-wrap gap-2 p-2 bg-white border border-gray-300 rounded-xl min-h-[64px] items-center focus-within:ring-2 focus-within:ring-primary/10 transition-all">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#2B60AF] text-white text-xs font-bold rounded-full group">
+                Puntual 
+                <span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-red-300" onclick="removeSkill(this)">close</span>
+            </span>
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#2B60AF] text-white text-xs font-bold rounded-full group">
+                Trabajo en equipo 
+                <span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-red-300" onclick="removeSkill(this)">close</span>
+            </span>
+            
+            <input id="skill-input" class="flex-1 outline-none border-none p-2 text-sm text-gray-600 focus:ring-0 min-w-[150px]" placeholder="Ej. Bilingüe, Organizado..." type="text"/>
+        </div>
+    </div>
+    <p class="text-[11px] text-gray-500 italic">Estas habilidades destacarán tu perfil ante los empleadores. No necesitas experiencia formal previa.</p>
+</section>
             </form>
         </div>
     </main>
@@ -227,18 +229,19 @@
                 <div class="flex flex-col gap-4">
                     <h4 class="text-fiwos-light font-bold text-sm uppercase tracking-wider">Soporte</h4>
                     <div class="flex flex-col gap-3 text-sm text-gray-300">
-                        <a class="hover:text-white transition-colors" href="#">Centro de Ayuda</a>
-                        <a class="hover:text-white transition-colors" href="#">Preguntas Frecuentes</a>
+                        <a class="hover:text-white transition-colors" >Centro de Ayuda</a>
+                        <a class="hover:text-white transition-colors" >Preguntas Frecuentes</a>
+                        <a class="hover:text-white transition-colors" >Guías de Usuario</a>
                     </div>
                 </div>
                 <div class="flex flex-col gap-4">
                     <h4 class="text-fiwos-light font-bold text-sm uppercase tracking-wider">Contacto</h4>
                     <div class="flex flex-col gap-3 text-sm text-gray-300">
-                        <a class="hover:text-white transition-colors flex items-center gap-2" href="mailto:hola@fiwos.com">
-                            <span class="material-symbols-outlined text-base">mail</span> hola@fiwos.com
+                        <a class="hover:text-white transition-colors flex items-center gap-2" href="mailto:fiwoscali@gmail.com">
+                            <span class="material-symbols-outlined text-base">mail</span> fiwoscali@gmail.com
                         </a>
-                        <a class="hover:text-white transition-colors flex items-center gap-2" href="tel:+573000000000">
-                            <span class="material-symbols-outlined text-base">call</span> +57 300 000 0000
+                        <a class="hover:text-white transition-colors flex items-center gap-2" href="tel:+573168258723">
+                            <span class="material-symbols-outlined text-base">call</span> +57 316 825 8723
                         </a>
                     </div>
                 </div>
@@ -258,5 +261,96 @@
             <span class="material-symbols-outlined">save</span> Guardar Perfil
         </button>
     </div>
+
+    <script>
+    const skillInput = document.getElementById('skill-input');
+    const skillsContainer = document.getElementById('skills-container');
+
+    // Función para crear la etiqueta visualmente
+    function createSkillTag(label) {
+        const span = document.createElement('span');
+        span.className = "inline-flex items-center gap-2 px-4 py-1.5 bg-[#2B60AF] text-white text-xs font-bold rounded-full animate-in fade-in zoom-in duration-200";
+        span.innerHTML = `
+            ${label}
+            <span class="material-symbols-outlined text-[14px] cursor-pointer hover:text-red-300" onclick="removeSkill(this)">close</span>
+        `;
+        return span;
+    }
+
+    // Escuchar la tecla Enter
+    skillInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault(); // Evita que el formulario se envíe
+            const value = skillInput.value.trim();
+            
+            if (value !== "") {
+                const newSkill = createSkillTag(value);
+                // Insertar la etiqueta antes del input
+                skillsContainer.insertBefore(newSkill, skillInput);
+                skillInput.value = ''; // Limpiar el input
+            }
+        }
+    });
+
+    // Función para borrar etiquetas
+    function removeSkill(element) {
+        // El elemento es el icono de cerrar, su padre es el span (la etiqueta)
+        const tag = element.parentElement;
+        tag.classList.add('scale-95', 'opacity-0'); // Efecto visual de salida
+        setTimeout(() => {
+            tag.remove();
+        }, 150);
+    }
+</script>
+
+<div id="modal-guardado" class="fixed inset-0 z-[100] flex items-center justify-center hidden">
+    <div class="absolute inset-0 bg-fiwos-dark/60 backdrop-blur-sm"></div>
+    
+    <div class="relative bg-white p-8 rounded-3xl shadow-2xl max-w-sm w-full mx-4 transform transition-all border border-blue-50">
+        <div class="flex flex-col items-center text-center">
+            <div class="size-20 bg-green-50 text-fiwos-accent rounded-full flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-5xl">person_check</span>
+            </div>
+            <h3 class="text-2xl font-extrabold text-fiwos-dark mb-2">¡Perfil Actualizado!</h3>
+            <p class="text-slate-500 text-sm mb-8">Tus cambios se han guardado correctamente en FIWOS. Los reclutadores ya pueden ver tu información actualizada.</p>
+            
+            <button onclick="cerrarModalGuardado()" class="w-full bg-primary text-white font-bold py-4 rounded-xl hover:bg-fiwos-dark transition-all shadow-lg hover-lift">
+                Seguir Editando
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const modalGuardado = document.getElementById('modal-guardado');
+    
+    // Buscamos el botón de forma más segura
+    // Opción A: Buscar el botón que está dentro del div fijo en la esquina inferior
+    const btnGuardar = document.querySelector('.fixed.bottom-6 button');
+
+    if (btnGuardar) {
+        btnGuardar.addEventListener('click', function(e) {
+            e.preventDefault(); 
+
+            // Feedback visual
+            const contenidoOriginal = this.innerHTML;
+            // Usamos inline-block para que el spinner no rompa el botón
+            this.innerHTML = `<span class="animate-spin border-2 border-white border-t-transparent rounded-full size-4 inline-block mr-2"></span> Guardando...`;
+            this.disabled = true;
+
+            setTimeout(() => {
+                modalGuardado.classList.remove('hidden');
+                
+                this.innerHTML = contenidoOriginal;
+                this.disabled = false;
+            }, 1000);
+        });
+    }
+
+    function cerrarModalGuardado() {
+        modalGuardado.classList.add('hidden');
+    }
+</script>
+
 </body>
 </html>
